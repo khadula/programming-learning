@@ -1,0 +1,72 @@
+/* button is a selector (selects what you want to change), background-color and the others are attributes */
+.subscribe-button {
+    background-color: rgb(201, 0, 0);
+    color: white;
+    border: none;
+    /* padding gives space around the text. better than height/width as it scales based on the text */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 2px; /* gives rounded corners */
+    cursor: pointer; /* changes the appearance of cursor when hovering over element */
+    margin-right: 8px; /* margin is how you make space between elements */
+    transition: opacity 0.15s; /* transition is how long it takes to transition to another value
+                                (enables for a smooth transition) */
+    vertical-align: top; /* aligns the element to the top of the page, rather than based off the text */
+}
+
+/* :hover is a pseudo class - it allows us to set stuff to happen only when hovering the element */
+.subscribe-button:hover {
+    opacity: 70%;
+}
+
+/* :active determines what happens when the button is clicked/active */
+.subscribe-button:active {
+    opacity: 50%;
+}
+
+.join-button {
+    background-color: white;
+    border-color: rgb(31, 103, 211);
+    border-style: solid;
+    color: rgb(31, 103, 211);
+    border-width: 1px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s; /* can do multiple transition values with commas */
+}
+
+.join-button:hover {
+    background-color: rgb(31, 103, 211);
+    color: white;
+}
+
+.join-button:active {
+    opacity: 70%;
+}
+
+.tweet-button {
+    color: white;
+    background-color: rgb(0, 132, 255);
+    border: none;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px; /* to get a rounded feel, take half of the lowest from either height/weidth */
+    font-weight: bold; /* how to make a font bold etc */
+    font-size: 15px;
+    margin-left: 8px;
+    transition: box-shadow 0.2s;
+    vertical-align: top; 
+}
+
+.tweet-button:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* first value is horizontal position, second is vertical position, 
+                                        third is blur*/
+}

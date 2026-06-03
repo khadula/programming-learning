@@ -1,0 +1,34 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 55px; /* set this to whatever the height of our header is */
+    background-color: white;
+    width: 72px;
+    z-index: 200;
+    padding-top: 5px;
+}
+
+.sidebar-link {
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* with flex-direction column, the directions of align-items and justify content
+    get switched*/
+    cursor: pointer;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+/* the space means we're targeting all imgs in sidebar-link */
+.sidebar-link img {
+    height: 24px;
+}
+
+.sidebar-link div {
+    font-family: Roboto, Arial;
+    font-size: 10px;
+}

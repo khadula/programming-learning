@@ -1,0 +1,76 @@
+.thumbnail {
+    /* 100% means it will take up all the space of its container */
+    width: 100%;   /* height automatically adjusts when you change width of an img */
+}
+
+.video-title {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.video-info-grid {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+.profile-picture {
+    width: 36px;
+    border-radius: 25px;
+}
+
+.thumbnail-row {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.video-author, .video-stats {
+    font-size: 12px;
+    color: rgb(95, 95, 95);
+}
+
+.video-author {
+    margin-bottom: 4px;
+}
+
+.video-grid {
+    font-family: Roboto, Arial;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+}
+
+/* this is a media query. used to make the site responsive*/
+/* the css in this will only activate if the screen size is at the stated minimum/maximum */
+@media (max-width: 750px) {
+    .video-grid {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
+    .video-grid {
+        grid-template-columns: 1fr 1fr 1fr
+    }
+}
+
+@media (min-width: 1000px) {
+    .video-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr
+    }
+}
+
+.video-time {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 8px;
+    right: 5px;
+}

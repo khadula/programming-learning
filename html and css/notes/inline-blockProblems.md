@@ -1,0 +1,1 @@
+because html takes space from literally the spaces on a file inbetween divs, thhere will be alignment issues regardless with inline-block
