@@ -1,3 +1,4 @@
+```
 <header>
 <nav>
 <main>
@@ -26,3 +27,4 @@ each of these are virtually identical to divs but they give more information whe
 
 <aside> defines some content aside from the content it is placed in (like a sidebar)
 - should be indirectly related to the surrounding content
+```
