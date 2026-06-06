@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Booleans</title>
+
+    </head>
+    <body>
+        <script>
+            // this will be true in javascript, because double equal (==) forces them both into the same type
+            console.log(5 == '5');
+
+            // this is how you dont force convert (always use triple equals in javascript)
+            console.log(5 === '5');
+            
+            // same applies for not equals. always use two equal signs to not force conversion
+            console.log(5 != '5');
+            console.log(5 !== '5');
+            
+            const age = 15
+
+            if (age >= 18) {
+                console.log('if branch');
+            } else if (age >= 14) {
+                console.log('else if branch');
+            } else {
+                console.log('else branch');
+            }
+
+            // logical operators
+            console.log(true && true);
+            console.log(true || true);
+            console.log(!true);
+
+            console.log(Math.random());
+
+
+            // falsy values in js: false, 0, '', NaN, undefined, null
+            if (0) {
+                console.log('falsy');
+            }
+            // anything not on the above is truthy
+            if (5) {
+                console.log('truthy');
+            }
+
+            // hypothetical use:
+            const cartQuantity = 5;
+            if (cartQuantity) {
+                console.log('cart has products');
+            }
+
+            /* Ternary operators */
+            // so if the value is true, then the first value after the question mark is saved. if not, the one after the colons is saved
+            const result = true ? 'truthy' : 'falsy';
+            // basically a shortcut for an if else
+
+            // guard: if the first thing is false then the second never even happens
+            false && console.log('hello');
+            const message = 5 && 'hello';
+
+            // works same with || if the first value is true
+            const currency = 'EUR' || 'USD';
+            console.log(currency); // will just show whichever is true first
+
+        </script>
+    </body>
+</html>
