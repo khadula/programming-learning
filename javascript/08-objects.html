@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+
+    </head>
+    <body>
+        <script>
+            // An object: lets us group multiple values together
+            const product = {
+                // name & price are properties. while socks and 1090 are values
+                // property-value pair
+                name: 'socks',
+                price: 1090
+            };
+
+            console.log(product);
+
+            // access each value using the property (similar to dicts)
+            console.log(product.name);
+            console.log(product.price);
+
+            // change the value of the property
+            product.name = 'cotton socks';
+            console.log(product);
+
+            // add a property to the object, and delete them
+            product.newProperty = 72;
+            console.log(product);
+
+            // delete properties from the object
+            delete product.newProperty;
+            console.log(product);
+
+
+            /* other object stuff ------------------------------- */
+            const product2 = {
+                name: 'shirt',
+                'delivery-time': '1 day',
+
+                // can also have nested objects
+                rating: {
+                    stars: 4.5,
+                    count: 87
+                },
+
+                // function inside an object is called a 'method'
+                func: function function1() {
+                    console.log('function inside object');
+                }
+            };
+
+            // can use bracket notation to access property values too
+            console.log(product2['name']);
+            // is good for properties which have dashes in their names or whatever -- wont work with dot notation
+            console.log(product2['delivery-time'])
+
+            // access the nested object
+            console.log(product2.rating.stars);
+
+            // access the method
+            product2.func();
+
+            // so console is also just a object.
+            // its good to use objects to group together similar functions. like Math is also an object
+            console.log(typeof console);
+
+
+            /* JSON --------------------------------------------------- */
+            // this would convert product2 from JavaScript Object to JSON in a string
+            JSON.stringify(product2);
+
+            // this would convert a JSON string back to a JavaScript Object
+            const jsonString = JSON.stringify(product2);
+            JSON.parse(jsonString);
+
+
+            /* DataType methods and Objects being References -------------------------------------------- */
+            // auto boxing: in javascript, strings get wrapped in a specialobject
+            console.log('hello'.length);
+            console.log('hello'.toUpperCase());
+
+            // auto boxing works with numbers and other things too
+
+            // Objects are references: object1 is just a reference to message: 'hello' in the computer's memory
+            const object1 = {
+                message: 'hello'
+            }
+            
+            // it just copies object1's reference: copy by reference
+            const object2 = object1;
+
+            // we were able to change the property even though the object was created through const.
+            // const just prevents us from changing the reference in the variable
+            // we can still reach in and change the properties
+            object1.message = 'Good job!';
+            console.log(object1);
+
+            // for object2, it was also changed since it just points at the same reference
+            console.log(object2);
+
+
+            // we cannot compare objects because it compares the references. which will of course be different
+            const object3 = {
+                message: 'Good job!'
+            };
+            console.log(object3 == object1);
+
+            // this works tho, cuz they have the same references
+            console.log(object2 === object1);
+
+
+
+            /* shortcuts for objects ---------------------------------------- */
+            const object4 = {
+                message: 'Good job!',
+                price: 799
+            };
+            // const message = object4.message;
+
+            // this is called 'Destructuring' 
+            // takes the properties out of object4 and stores them in new variables called message and price
+            const { message, price } = object4;
+            console.log(message);
+
+
+            // these are all shorthand syntaxs
+            const object5 = {
+                // message: message
+                message,
+                // the above does the same as the first line (if they both have the same name, just do it once)
+
+                // method: function function1() {
+                //     console.log('method');
+                // }
+                method() {
+                    console.log('method');
+                }
+                // the above is a shorthand for the other function declaration
+            };
+        </script>
+    </body>
+</html>
