@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+
+    </head>
+    <body>
+        <button>hello</button>
+        <!-- common practice to start class with js- if using it in js -->
+        <button class="js-button">second button</button>
+
+        <script>
+            /* ------------- DOCUMENT OBJECT MODEL ---------------- */
+
+            // document is a built in object
+            // body is also an object inside the document objects
+
+            document.title = 'Changed'; // this allows us to change the title of the webpage
+            
+            console.log(document.body);  // this allows us to change anything in the body using javascript
+            // example:
+            console.log(document.body.innerHTML);   // innerHTML is everything inside the body element
+            // document.body.innerHTML = 'hello';
+
+
+            // this method lets us get any element on the page and put it in our js
+            document.querySelector();
+            // example:
+            console.log(document.querySelector('button').innerHTML);  // gets the first button element from the page
+            // .innerHTML accesses the content of the button
+
+            // eg;
+            document.querySelector('button')
+                .innerHTML = 'Changed';
+
+            // we can also target classes with querySelector
+            const buttomElement = document.querySelector('.js-button');
+            
+
+            // window is another built in object
+            window.document;
+            window.console.log('window');
+            // but we dont have to type it, js will do it automatically
+        </script>
+    </body>
+</html>

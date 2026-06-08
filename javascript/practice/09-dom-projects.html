@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom Exercises</title>
+
+    </head>
+    <body>
+        <p>Youtube Subscribe Button</p>
+        <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+
+        <p>Amazon Shipping Calculator</p>
+        <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+            handleCostKeydown(event);
+        ">
+        <button onclick="
+            calculateTotal();
+        ">Calculate</button>
+        <p class="js-total-cost"></p>
+
+
+        <script>
+            // Changes the text of the Subscribe button to subscribed, and vice versa
+            function subscribe() {
+                const buttonElement = document.querySelector('.js-subscribe-button');
+
+                // innerText just gets the visible text, disregarding extra space etc
+                if (buttonElement.innerText === 'Subscribe') {
+                    buttonElement.innerText = 'Subscribed';
+                } else {
+                    buttonElement.innerText = 'Subscribe';
+                }
+            }
+
+            // Calculates the total for the shipping
+            function calculateTotal() {
+                const inputElement = document.querySelector('.js-cost-input');
+
+                // .value is how you get the text of a input box
+                let cost = Number(inputElement.value)   // anything from .value, .innerHTML, etc will be a string. (have to convert it)
+
+                if (cost < 40) {
+                    cost = cost + 10;
+                } 
+
+                document.querySelector('.js-total-cost')
+                    .innerHTML = `$${cost}`;
+            }
+
+            // Uses event to calculate shipping on enter press
+            function handleCostKeydown(event) {
+                // use event.key to get precise key
+                if (event.key === 'Enter') {
+                    calculateTotal();
+                }
+            }
+
+            // other string notes
+            String(25);
+            console.log('25' - 5);  // this works but dont do it
+            console.log('25' + 5);  // this doesnt work
+            
+        </script>
+    </body>
+</html>
