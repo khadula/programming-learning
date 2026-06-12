@@ -3,10 +3,20 @@
     <head>
         <title>Dom Exercises</title>
 
+        <style>
+            .subscribe-button {
+                color: blue;
+            }
+
+            .is-subscribed {
+                color: red;
+            }
+        </style>
+
     </head>
     <body>
         <p>Youtube Subscribe Button</p>
-        <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+        <button onclick="subscribe();" class="js-subscribe-button subscribe-button">Subscribe</button>
 
         <p>Amazon Shipping Calculator</p>
         <input placeholder="Cost of order" class="js-cost-input" onkeydown="
@@ -26,8 +36,10 @@
                 // innerText just gets the visible text, disregarding extra space etc
                 if (buttonElement.innerText === 'Subscribe') {
                     buttonElement.innerText = 'Subscribed';
+                    buttonElement.classList.add('is-subscribed');   // can add classes to elements with js using classList
                 } else {
                     buttonElement.innerText = 'Subscribe';
+                    buttonElement.classList.remove('is-subscribed');    // can remove classes from elements as well
                 }
             }
 
