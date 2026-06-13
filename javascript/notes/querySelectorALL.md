@@ -1,0 +1,4 @@
+- querySelector() only gets the first of the thing specified
+- if we use querySelectorAll() we will get all of that thing specified
+    -   it gives us a list of all the elements selected
+    -   loop through it with a forEach

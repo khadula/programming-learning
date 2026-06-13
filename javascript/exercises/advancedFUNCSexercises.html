@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Funcs Exercises</title>
+    </head>
+    <body>
+        <button class="js-button">Click me</button>
+        <button class="js-button">Click me 2</button>
+        <button class="js-button">Maybe click me</button>
+
+        <script>
+            // 12j
+            // create an arrow function called multiply that takes 2 numbers and multiplies them together
+            const multiply = (num1, num2) => num1 * num2;
+            console.log(multiply(5, 4));
+
+            // 12l
+            const countPositive = (nums) => {
+                let count = 0;
+
+                nums.forEach((value) => {
+                    if (value > 0) {
+                        count++;
+                    }
+                });
+
+                return count;
+            }
+            console.log(countPositive([1,2,3,-5,-2,9]));
+
+            // 12m
+            const addNum = (array, num) => {
+                return array.map((value) => {
+                    return value + num;
+                });
+            };
+            console.log(addNum([1,2,3], 5));
+
+            // 12o
+            const removeEgg = (foods) => {
+                let count = 0;
+                return foods.filter((value) => {
+                    if (value === 'egg' && count < 2) {
+                        count++;
+                        return false;
+                    } else {
+                        return true;
+                    }
+                });
+            };
+            console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+            
+            // practice with querySelectorAll and addeventlistener
+            const buttonElems = document.querySelectorAll('.js-button');
+            console.log(buttonElems);
+            
+            buttonElems.forEach((value) => {
+                value.addEventListener('keydown', (event) => {
+                    console.log(`Key pressed: ${event.key}`);
+                });
+            });
+
+
+        </script>
+    </body>
+    
+</html>
