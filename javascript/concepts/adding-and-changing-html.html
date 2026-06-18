@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .box {
+                border: 3px solid;
+                width: 100%;
+                height: 125px;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        <div id="box1" class="box">
+            <p>box1</p>
+        </div>
+
+        <div id="box2" class="box">
+            <p>box2</p>
+        </div>
+
+        <div id="box3" class="box">
+            <p>box3</p>
+        </div>
+
+        <div id="box4" class="box">
+            <p>box4</p>
+        </div>
+
+
+
+        <ol id="fruits">
+            <li id="apple">apple</li>
+            <li id="orange">orange</li>
+            <li id="banana">banana</li>
+        </ol>
+
+        <script>
+            // STEP 1 CREATE THE ELEMENT
+            const newH1 = document.createElement("h1"); // the string is the type of element you want to create
+
+            const newListItem = document.createElement("li");
+
+            // STEP 2 ADD ATTRIBUTES/PROPERTIES
+            newH1.textContent = "I like pizza!";
+            newH1.id = "myH1";
+            newH1.style.color = "red";
+            newH1.style.textAlign = "center";
+
+            newListItem.textContent = "coconut";
+            newListItem.id = "coconut";
+            newListItem.style.fontWeight = "bold";
+            newListItem.style.backgroundColor = "lightgreen";
+
+
+            // STEP 3 APPEND ELEMENT TO DOM
+            // document.body.append(newH1);    // when appending to a parent, the new element is the last child
+            // document.body.prepend(newH1);   // use prepend to put it at the beginning
+            document.getElementById("box1").append(newH1);  // can add it to existing elements using id, class, etc
+
+            // const box2 = document.getElementById("box2");
+            // document.body.insertBefore(newH1, box2);    // insertBefore takes 2 parameters, newElement and currentElement
+
+            // what if they dont have ids?
+            // const boxes = document.querySelectorAll(".box");    // use querySelectorAll to get all boxes
+            // document.body.insertBefore(newH1, boxes[2]);    // access individual box with index
+
+            
+            // document.getElementById("fruits").append(newListItem);
+            // document.getElementById("fruits").prepend(newListItem);
+            // const orange = document.getElementById("orange");
+            // document.getElementById("fruits").insertBefore(newListItem, orange);
+            const listItems = document.querySelectorAll("#fruits li");
+            document.getElementById("fruits").insertBefore(newListItem, listItems[2]);
+
+            // REMOVE HTML ELEMENT
+            document.getElementById("box1").removeChild(newH1); // just have to access the parent
+
+            document.getElementById("fruits").removeChild(newListItem);
+
+
+            
+        </script>
+    </body>
+</html>

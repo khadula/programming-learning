@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #myBox {
+                background-color: lightgreen;
+                width: 300px;
+                height: 300px;
+                font-size: 4.5rem;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        <div id="myBox">
+            click me :)
+        </div>
+        
+        <button id="myButton">Click me</button>
+
+        <script>
+            // event listener = listen for specific events to create interactive web pages
+            // events: click, mosueover, mouseout, etc
+
+            const myBox = document.getElementById("myBox");
+            const myButton = document.getElementById("myButton");
+
+            function changeColor(event) {
+                if (event.target.style.backgroundColor === "lightgreen") {
+                    // can access the thing clicked on with event.target
+                    event.target.style.backgroundColor = "lightpink";
+                    event.target.textContent = "that hurt saj";
+                } else {
+                    event.target.style.backgroundColor = "lightgreen";
+                    event.target.textContent = "click me :)";
+                }
+            }   
+            
+            // two params for addEventListener()
+            // the event type and a callback
+            myBox.addEventListener("click", changeColor);
+
+
+            myBox.addEventListener("mouseover", event => {
+                event.target.style.backgroundColor = "yellow";
+                event.target.textContent = "dont do it!!!";
+            });
+
+            myBox.addEventListener("mouseout", event => {
+                event.target.style.backgroundColor = "lightgreen";
+                event.target.textContent = "click me :)";
+            });
+
+
+            myButton.addEventListener("click", event => {
+                myBox.style.backgroundColor = "lightpink";
+                myBox.textContent = "that hurt saj";
+            });
+
+            
+        </script>
+    </body>
+</html>

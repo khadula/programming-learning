@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            // closures
+            // - a function defined inside of another function
+            // - the inner function has access to the variables and the score of the outer function
+            // - allows for private variables and state maintenance
+
+            function outer() {
+                let message = "hello";
+
+
+                function inner() {
+                    // so the inner function has access to the outer function
+                    console.log(message);
+                }
+
+                inner();
+            }
+
+            // message = "hi";  // this doesnt work. so benefit of closures is to make variables private
+
+            outer();
+
+            // with this, count var is safe inside the function (private). and the state is maintained
+            // count won't be reset
+            function createCounter() {
+                let count = 0;
+
+                function increment() {
+                    count++;
+                    console.log(`count increased to ${count}`);
+                }
+
+                return {increment};
+            }
+
+            const counter = createCounter();
+            counter.increment();
+            counter.increment();
+            counter.increment();
+
+            console.log(counter.count); // count is hidden and cannot be accessed/changed
+
+            // very similar to classes
+            
+        </script>
+    </body>
+</html>

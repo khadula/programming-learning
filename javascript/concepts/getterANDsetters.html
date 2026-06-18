@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            // getters and setters
+            // - helps make classes accessible - writable via setters and readable via getters
+
+            class Rectange {
+                constructor(width, height) {
+                    this.width = width;
+                    this.height = height;
+                }
+
+                // use the set keyword for a setter
+                set width(newWidth) {
+                    if (newWidth > 0) {
+                        // the underscore means it is a private property
+                        this._width = newWidth;
+                    }
+                }
+
+                set height(newHeight) {
+                    if (newHeight > 0) {
+                        // the underscore means it is a private property
+                        this._height = newHeight;
+                    }
+                }
+
+                // use the get keyword for a getter
+                get width() {
+                    return this._width;
+                }
+
+                get height() {
+                    return this._height;
+                }
+            }
+        </script>
+    </body>
+</html>

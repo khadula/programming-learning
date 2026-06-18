@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            // static keyword
+            // - a keyword that defines properties or methods that belong to a class itself rather 
+            // - than the objects created from that class
+            // - (class owns anything static, not the objects)
+
+            // class MathUtil {
+            //     static PI = 3.14159;
+
+            //     static getDiameter(radius) {
+            //         return radius * 2;
+            //     }
+
+            //     static getCircumference(radius) {
+            //         return 2 * this.PI * radius;
+            //     }
+
+            //     static getArea(radius) {
+            //         return this.PI * radius * radius
+            //     }
+            // }
+
+            // // just have to type the name of the class to access PI or these methods
+            // // they don't need an object to work
+            // console.log(MathUtil.PI);   
+            // console.log(MathUtil.getDiameter(10));
+            // console.log(MathUtil.getCircumference(10));
+            // console.log(MathUtil.getArea(10));
+
+
+            class User{
+                static userCount = 0;
+
+                constructor(username) {
+                    this.username = username;
+                    User.usercount++;    // can write additional code in a constructor, not just for properties
+                }
+
+                sayHello() {
+                    console.log(`Hello, my username is ${this.username}`);
+                }
+
+                static getUserCount() {
+                    console.log(`There are ${User.userCount} users`);
+                }
+            }
+
+            const user1 = new User("Spongebob");
+            const user2 = new User("Spongebob2");
+            const user3 = new User("Spongebob3");
+
+            console.log(user1.username);
+            console.log(user1.userCount);   // this gives undefined -- user1 doesnt have usercount as a property
+                                            // it is static so it belongs to the class
+            user1.sayHello();
+            console.log(User.usercount)
+            console.log(User.getUserCount);
+
+
+            // When to use static keyword? when the method or property: 
+            // - doesn't depend on instance-specific data
+            // - represents behavior/data shared by all instances
+            // - is a utility/helper func related to the class
+            // - keeps track of information about the class as a whole
+        </script>
+    </body>
+</html>

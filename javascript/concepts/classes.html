@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            // class
+            // - a ES6 feature which provides a more structured/cleaner way to work with objects
+            // - useful with static keyword, encapsulation, inheritance, etc
+
+            class Product{
+                constructor(name, price) {
+                    this.name = name;
+                    this.price = price;
+                }
+
+                // can define functions within the class to work on the object defined in the constructor
+                displayProduct() {
+                    console.log(`Product: ${this.name}`)
+                    console.log(`Price: $${this.price}`)
+                }
+
+                // getter for name
+                getName() {
+                    return this.name;
+                }
+
+                // getter for price
+                getPrice() {
+                    return this.price;
+                }
+
+                // setter for name
+                setName(newName) {
+                    this.name = newName;
+                }
+
+                // setter for price
+                setPrice(newPrice) {
+                    this.price = newPrice;
+                }
+            }
+
+            const product1 = new Product("pants", 25.00);
+            product1.setName("shirt");
+            product1.displayProduct();
+
+        </script>
+    </body>
+</html>

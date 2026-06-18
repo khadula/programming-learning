@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            // super keyword
+            // - used in classes to call the constructor or access the properties and methods of a
+            // - parent (superclass)
+
+            class Animal {
+                constructor (name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+
+                move() {
+                    console.log(`${this.name} moves`);
+                }
+            }
+
+            // rabbit class can use super to reuse the name and age
+            class Rabbit extends Animal {
+                constructor(name, age, runSpeed) {
+                    super(name, age);
+                    this.runSpeed = runSpeed;
+                }
+
+                run() {
+                    super.move();
+                }
+            }
+
+        </script>
+    </body>
+</html>

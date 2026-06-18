@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div id="food">
+            <ul id="fruits">
+                <li>apple</li>
+                <li>orange</li>
+                <li>banana</li>
+            </ul>
+
+            <ul id="veggies">
+                <li>carrots</li>
+                <li>onions</li>
+                <li>potatoes</li>
+            </ul>
+
+            <ul id="desserts">
+                <li>cake</li>
+                <li>pie</li>
+                <li>ice cream</li>
+            </ul>
+        </div>
+
+        <script>
+            // DOM navigation = navigating through the structure of an HTML document using JS
+
+            // .firstElementChild - gives an elements first child
+            // .lastElementChild - gives an elements last child
+            // .nextElementSibling - gives an elements next sibling
+            // .previousElementSibling - gives a previous sibling
+            // .parentElement - gives the parent of an element
+            // .children - gives the children of an element
+            // etc
+
+            
+            const element = document.getElementById('food');
+            const firstChild = element.firstElementChild;
+            firstChild.style.backgroundColor = 'yellow';
+
+            const parent = firstChild.parentElement;
+            parent.style.backgroundColor = 'blue';
+
+            // etc
+            
+            
+
+
+            
+        </script>
+    </body>
+</html>
