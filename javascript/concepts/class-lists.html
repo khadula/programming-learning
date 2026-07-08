@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <style>
+        #myButton {
+            font-size: 4rem;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+
+        .enabled {
+            background-color: lightcoral;
+            color: lightblue;
+        }
+
+        .hover {
+            box-shadow: 0 0 10px grey;
+            font-weight: bold;
+        }
+
+        .disabled {
+            background-color: lightblue;
+            color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">my button</button>
+
+
+
+    <script>
+        // ClassList = element property in JS used to interact with an element's list of classes (CSS classes)
+        //  - allows us to make reusable classes for many elements across a webpage
+        //
+        // add()
+        // remove()
+        // toggle()
+        // replace()
+        // contains()
+
+        const myButton = document.getElementById("myButton");
+
+        // myButton.classList.add("enabled");
+        // myButton.classList.remove("enabled");
+
+
+        // myButton.addEventListener("click", event => {
+        //     myButton.classList.toggle("enabled");
+        // });
+
+        // myButton.addEventListener("mouseover", event => {
+        //     myButton.classList.add("hover");
+        // });
+
+        // myButton.addEventListener("mouseout", event => {
+        //     myButton.classList.remove("hover");
+        // });
+
+
+        myButton.classList.add("enabled");
+        myButton.addEventListener("click", event => {
+            if (event.target.classList.contains("disabled")) {
+                event.target.classList.replace("disabled", "enabled");
+            } else {
+                event.target.classList.replace("enabled", "disabled");
+            }
+
+            
+        })
+
+    </script>
+</body>
+</html>

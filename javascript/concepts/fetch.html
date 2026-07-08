@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <input type="text" id="pokemonName" placeholder="Enter Pokemon Name...">
+    <button onclick="fetchData()">Fetch Pokemon</button><br>
+
+    <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
+
+
+    <script>
+        // fetch = function used for making HTTP requests to fetch resources
+        // - fetch (JSON style data, images, files, etc)
+        // - simplifies asynchronous data fetching in JS and used for interacting with APIs to retrieve
+        // and send data asynchronously over the web
+        //
+        // - fetch(url, {options})
+        
+        // fetches are promise based (so treat them as promises with responses)
+        // fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+        //     .then(response => {
+
+        //         if (!response.ok) {
+        //             throw new Error("Could not fetch resource.");
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => console.log(data))
+        //     .catch(error => console.error(error));
+
+        // do it using async/await
+        async function fetchData() {
+            try {
+                // get the input text box
+                const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+
+                // use a template string to put in the pokemon's name from the text box
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+
+                if (!response.ok) {
+                    throw new Error("Could not fetch resource");
+                }
+
+                const data = await response.json();
+                const pokemonSprite = data.sprites.front_default;
+                const imgElement = document.getElementById("pokemonSprite");
+
+                imgElement.src = pokemonSprite;
+                imgElement.style.display = "block";
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
